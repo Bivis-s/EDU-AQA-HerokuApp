@@ -1,0 +1,34 @@
+package tests;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import pages.AddRemovePage;
+
+import java.util.concurrent.TimeUnit;
+
+public abstract class AbstractTest {
+    protected WebDriver driver;
+    public AddRemovePage addRemovePage;
+
+    @BeforeMethod
+    public void initTest() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver(new ChromeOptions().addArguments("--incognito"));
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        addRemovePage = new AddRemovePage(driver);
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void endTest() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+}
