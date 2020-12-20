@@ -7,15 +7,15 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public abstract class AbstractPage {
-    public WebDriver driver;
-    public static final String URL = "http://the-internet.herokuapp.com/";
+    protected WebDriver driver;
+    protected static final String URL = "http://the-internet.herokuapp.com/";
 
     AbstractPage(WebDriver driver) {
         this.driver = driver;
     }
 
     /**
-     * contains driver.get(URL);
+     * usually contains driver.get(URL)
      */
     public abstract AbstractPage openPage();
 
@@ -44,5 +44,13 @@ public abstract class AbstractPage {
      */
     protected List<WebElement> findElements(By element) {
         return driver.findElements(element);
+    }
+
+    /**
+     * @param element By element
+     * @return if element is selected true else false
+     */
+    protected boolean isSelected(By element) {
+        return driver.findElement(element).isSelected();
     }
 }

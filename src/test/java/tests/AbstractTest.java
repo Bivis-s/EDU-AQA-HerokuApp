@@ -6,12 +6,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.AddRemovePage;
 
 import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractTest {
-    protected WebDriver driver;
+
+    public WebDriver driver;
 
     @BeforeMethod
     public void initTest() {
