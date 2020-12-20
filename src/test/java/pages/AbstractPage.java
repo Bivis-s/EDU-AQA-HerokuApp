@@ -10,14 +10,14 @@ public abstract class AbstractPage {
     public WebDriver driver;
     public static final String URL = "http://the-internet.herokuapp.com/";
 
-
     AbstractPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void openPage(String url) {
-        driver.get(url);
-    }
+    /**
+     * contains driver.get(URL);
+     */
+    public abstract AbstractPage openPage();
 
     /**
      * Finding 1 {@code element} and click it {@code counter} times
@@ -26,7 +26,7 @@ public abstract class AbstractPage {
      * @param counter Count of clicks
      * @return this object
      */
-    public AbstractPage clickElement(By element, int counter) {
+    protected AbstractPage clickElement(By element, int counter) {
 
         WebElement button = driver.findElement(element);
 
@@ -42,9 +42,7 @@ public abstract class AbstractPage {
      * @param element By element
      * @return {@code int} of found elements
      */
-    public int findElementCount(By element) {
-
-        List<WebElement> webElementList = driver.findElements(element);
-        return webElementList.size();
+    protected List<WebElement> findElements(By element) {
+        return driver.findElements(element);
     }
 }

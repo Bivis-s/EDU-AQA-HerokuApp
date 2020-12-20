@@ -12,7 +12,6 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractTest {
     protected WebDriver driver;
-    public AddRemovePage addRemovePage;
 
     @BeforeMethod
     public void initTest() {
@@ -20,8 +19,6 @@ public abstract class AbstractTest {
         driver = new ChromeDriver(new ChromeOptions().addArguments("--incognito"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        addRemovePage = new AddRemovePage(driver);
     }
 
     @AfterMethod(alwaysRun = true)
