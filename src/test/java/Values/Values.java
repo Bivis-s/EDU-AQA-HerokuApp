@@ -1,5 +1,8 @@
 package Values;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Values {
-    public static final String SITE_ADD_REMOVE = "http://the-internet.herokuapp.com/add_remove_elements/";
+    public static final List<Integer> expectedDropdownEnabledValues = Arrays.asList(1, 2);
 }

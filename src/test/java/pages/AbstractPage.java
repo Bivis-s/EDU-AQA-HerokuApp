@@ -37,6 +37,15 @@ public abstract class AbstractPage {
     }
 
     /**
+     * Find first {@code element} element on page else throw exception
+     * @param element By element
+     * @return first {@code element} element on page
+     */
+    protected WebElement findElement(By element) {
+        return driver.findElement(element);
+    }
+
+    /**
      * Find all {@code element} elements on page
      *
      * @param element By element
