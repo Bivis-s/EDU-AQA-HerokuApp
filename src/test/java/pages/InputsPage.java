@@ -18,11 +18,13 @@ public class InputsPage extends AbstractPage {
     }
 
     public String getInputFieldText() {
-        return findElement(INPUT_FIELD).getAttribute("value");
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        return String.valueOf(js.executeScript("return document.getElementsByTagName('input')[0].valueAsNumber"));
     }
 
     public boolean isInputFieldEmpty() {
-        return getInputFieldText().equals("");
+        return getInputFieldText().equals("null");
     }
 
     public InputsPage sendToInputField(int count, CharSequence... chsq) {
