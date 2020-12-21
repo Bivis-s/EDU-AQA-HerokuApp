@@ -1,9 +1,10 @@
-package tests;
+package tests.addRemoveTest;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.AddRemovePage;
+import tests.AbstractTest;
 
 public class AddRemoveTest extends AbstractTest {
 

@@ -1,4 +1,4 @@
-package tests;
+package tests.dropdownTest;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -7,7 +7,7 @@ import pages.DropdownPage;
 
 import java.util.List;
 
-import Values.Values;
+import tests.AbstractTest;
 
 public class DropdownTest extends AbstractTest {
     private DropdownPage dropdownPage;

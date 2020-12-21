@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 
 public class AddRemovePage extends AbstractPage {
 
-    private static final String URL = AbstractPage.URL + "add_remove_elements/";
-    private static final By BUTTON_ADD_ELEMENT = By.xpath("//*[@onclick='addElement()']");
-    private static final By BUTTON_DELETE_ELEMENT = By.xpath("//*[@onclick='deleteElement()']");
+    protected static final String URL = AbstractPage.URL + "add_remove_elements/";
+    private final By BUTTON_ADD_ELEMENT = By.xpath("//*[@onclick='addElement()']");
+    private final By BUTTON_DELETE_ELEMENT = By.xpath("//*[@onclick='deleteElement()']");
 
     public AddRemovePage(WebDriver driver) {
         super(driver);
@@ -20,7 +20,7 @@ public class AddRemovePage extends AbstractPage {
     }
 
     public AddRemovePage addElement(int count) {
-        clickElement(AddRemovePage.BUTTON_ADD_ELEMENT, count);
+        clickElement(BUTTON_ADD_ELEMENT, count);
         return this;
     }
 

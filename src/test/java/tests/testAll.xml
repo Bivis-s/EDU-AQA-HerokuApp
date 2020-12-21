@@ -4,19 +4,25 @@
 
     <test name="AddRemove">
         <classes>
-            <class name="tests.AddRemoveTest"/>
+            <class name="tests.addRemoveTest.AddRemoveTest"/>
         </classes>
     </test>
 
     <test name="Checkboxes">
         <classes>
-            <class name="tests.CheckboxesTest"/>
+            <class name="tests.checkboxesTest.CheckboxesTest"/>
         </classes>
     </test>
 
     <test name="Dropdown">
         <classes>
-            <class name="tests.DropdownTest"/>
+            <class name="tests.dropdownTest.DropdownTest"/>
+        </classes>
+    </test>
+
+    <test name="Input">
+        <classes>
+            <class name="tests.inputsTest.InputsTest"/>
         </classes>
     </test>
 

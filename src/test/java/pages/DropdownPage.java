@@ -10,7 +10,7 @@ import java.util.List;
 
 public class DropdownPage extends AbstractPage {
 
-    private final String URL = AbstractPage.URL + "/dropdown";
+    protected static final String URL = AbstractPage.URL + "/dropdown";
     private final By DROPDOWN = By.xpath("//*[@id='dropdown']");
 
     public DropdownPage(WebDriver driver) {
@@ -55,10 +55,12 @@ public class DropdownPage extends AbstractPage {
         return values;
     }
 
-    public void selectOption(int indexOfOption) {
+    public DropdownPage selectOption(int indexOfOption) {
         getEnabledOptionsInDropdown()
                 .get(indexOfOption)
                 .click();
+
+        return this;
     }
 
     public boolean isOptionSelected(int indexOfOption) {

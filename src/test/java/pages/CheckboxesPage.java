@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class CheckboxesPage extends AbstractPage{
 
-    private final String URL = AbstractPage.URL + "checkboxes";
+    protected static final String URL = AbstractPage.URL + "checkboxes";
     private final String FORM_CHECKBOXES_XPATH = "//*[@id='checkboxes']/input[%s]";
 
     private By getCheckbox(int numberOfCheckbox) {

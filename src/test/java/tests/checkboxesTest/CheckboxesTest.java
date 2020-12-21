@@ -1,9 +1,10 @@
-package tests;
+package tests.checkboxesTest;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.CheckboxesPage;
+import tests.AbstractTest;
 
 public class CheckboxesTest extends AbstractTest {
 
