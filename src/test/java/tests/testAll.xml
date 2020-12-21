@@ -26,4 +26,10 @@
         </classes>
     </test>
 
+    <test name="DataTables">
+        <classes>
+            <class name="tests.dataTablesTest.DataTablesTest"/>
+        </classes>
+    </test>
+
 </suite>

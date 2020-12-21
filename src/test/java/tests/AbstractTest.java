@@ -16,7 +16,7 @@ public abstract class AbstractTest {
     @BeforeMethod
     public void initTest() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(new ChromeOptions().addArguments("--incognito", "headless"));
+        driver = new ChromeDriver(new ChromeOptions().addArguments("--incognito"));
         driver.manage().window().maximize();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

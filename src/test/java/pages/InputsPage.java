@@ -21,13 +21,6 @@ public class InputsPage extends AbstractPage {
         return findElement(INPUT_FIELD).getAttribute("value");
     }
 
-    public String getInputFieldTextByJs() {
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        WebElement webElement = findElement(INPUT_FIELD);
-
-        return String.valueOf(jsExecutor.executeScript("return arguments[0].value", webElement));
-    }
-
     public boolean isInputFieldEmpty() {
         return getInputFieldText().equals("");
     }
