@@ -32,4 +32,10 @@
         </classes>
     </test>
 
+    <test name="HoversTest">
+        <classes>
+            <class name="tests.hoversTest.HoversTest"/>
+        </classes>
+    </test>
+
 </suite>
