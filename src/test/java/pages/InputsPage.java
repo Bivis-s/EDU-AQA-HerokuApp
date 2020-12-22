@@ -30,7 +30,7 @@ public class InputsPage extends AbstractPage {
     public InputsPage sendToInputField(int count, CharSequence... chsq) {
 
         for (int i = 0; i < count; i++) {
-            findElement(INPUT_FIELD).sendKeys(chsq);
+            driver.findElement(INPUT_FIELD).sendKeys(chsq);
         }
 
         return this;

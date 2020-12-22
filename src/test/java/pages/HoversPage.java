@@ -37,7 +37,7 @@ public class HoversPage extends AbstractPage {
     }
 
     public List<WebElement> getAllProfiles() {
-        return findElements(PROFILES_XPATH);
+        return driver.findElements(PROFILES_XPATH);
     }
 
     public List<String> getAllCaptions() {
@@ -53,7 +53,7 @@ public class HoversPage extends AbstractPage {
             actions.moveToElement(profiles.get(i)).build().perform();
 
             captions.add(
-                    findElement(
+                    driver.findElement(
                             getProfileCaption(i + 1))
                             .getText());
         }
@@ -61,7 +61,7 @@ public class HoversPage extends AbstractPage {
         return captions;
     }
 
-    public String getAllProfileLinksContent(int numberOfProfile) {
+    public String getAllProfileLinkContent(int numberOfProfile) {
 
         Actions actions = new Actions(driver);
 
@@ -72,11 +72,11 @@ public class HoversPage extends AbstractPage {
                 .build()
                 .perform();
 
-        findElement(
+        driver.findElement(
                 getProfileLink(numberOfProfile + 1))
                 .click();
 
-        return findElement(By.tagName("h1")).getText();
+        return driver.findElement(By.tagName("h1")).getText();
     }
 
 

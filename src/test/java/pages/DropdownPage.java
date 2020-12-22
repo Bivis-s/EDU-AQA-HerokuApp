@@ -24,7 +24,7 @@ public class DropdownPage extends AbstractPage {
     }
 
     private Select getDropdown(By element) {
-        return new Select(findElement(element));
+        return new Select(driver.findElement(element));
     }
 
     public List<WebElement> getEnabledOptionsInDropdown() {

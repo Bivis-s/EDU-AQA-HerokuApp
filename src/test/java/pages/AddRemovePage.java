@@ -35,6 +35,6 @@ public class AddRemovePage extends AbstractPage {
      * @return {@code int} of found elements
      */
     public int getCountOfDeletableElements() {
-        return findElements(BUTTON_DELETE_ELEMENT).size();
+        return driver.findElements(BUTTON_DELETE_ELEMENT).size();
     }
 }

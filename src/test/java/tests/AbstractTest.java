@@ -15,11 +15,11 @@ public abstract class AbstractTest {
 
     @BeforeMethod
     public void initTest() {
-        WebDriverManager.chromedriver().setup();
+
+        WebDriverManager.chromedriver().driverVersion("87.0.4280.88").setup();
         driver = new ChromeDriver(new ChromeOptions().addArguments("--incognito"));
         driver.manage().window().maximize();
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @AfterMethod(alwaysRun = true)

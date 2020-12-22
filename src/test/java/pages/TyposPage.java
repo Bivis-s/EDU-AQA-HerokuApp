@@ -21,7 +21,7 @@ public class TyposPage extends AbstractPage {
     }
 
     public boolean isParagraphContainsTypo() {
-        return findElement(ParagraphWithRandomlyTypo).getText().contains("won,t");
+        return driver.findElement(ParagraphWithRandomlyTypo).getText().contains("won,t");
     }
 
 }

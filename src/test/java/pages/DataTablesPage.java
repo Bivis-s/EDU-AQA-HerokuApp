@@ -45,27 +45,27 @@ public class DataTablesPage extends AbstractPage {
     }
 
     public String getTable1HeadCell(int numberOfCell) {
-        return findElement(
+        return driver.findElement(
                 getTable1THeadBy(numberOfCell))
                 .getText();
     }
 
     public String getTable1TbodyCell(int numberOfRow, int numberOfColumn) {
-        return findElement(
+        return driver.findElement(
                 getTable1CellBy(numberOfRow, numberOfColumn))
                 .getText();
     }
 
     public int getTable1HeadSize() {
-        return findElements(By.xpath(TABLE1_THEAD_CELLs_XPATH)).size();
+        return driver.findElements(By.xpath(TABLE1_THEAD_CELLs_XPATH)).size();
     }
 
     public int getTable1TBodyRowsSize() {
-        return findElements(By.xpath(TABLE1_TBODY_TRs_XPATH)).size();
+        return driver.findElements(By.xpath(TABLE1_TBODY_TRs_XPATH)).size();
     }
 
     public int getTable1Body1stRowCellsSize() {
-        return findElements(By.xpath(TABLE1_TBODY_1ST_ROW_CELLs_XPATH)).size();
+        return driver.findElements(By.xpath(TABLE1_TBODY_1ST_ROW_CELLs_XPATH)).size();
     }
 
 }

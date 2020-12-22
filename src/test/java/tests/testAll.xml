@@ -32,9 +32,21 @@
         </classes>
     </test>
 
+    <test name="Typos">
+        <classes>
+            <class name="tests.typosTest.TyposTest"/>
+        </classes>
+    </test>
+
     <test name="HoversTest">
         <classes>
             <class name="tests.hoversTest.HoversTest"/>
+        </classes>
+    </test>
+
+    <test name="NotificationMessageTest">
+        <classes>
+            <class name="tests.notificationMessageTest.NotificationMessageTest"/>
         </classes>
     </test>
 

@@ -23,7 +23,7 @@ public class CheckboxesPage extends AbstractPage{
     }
 
     public boolean isCheckboxChecked(int checkboxNumber) {
-        return isSelected(getCheckbox(checkboxNumber));
+        return driver.findElement(getCheckbox(checkboxNumber)).isSelected();
     }
 
     public CheckboxesPage clickCheckbox(int checkboxNumber) {
