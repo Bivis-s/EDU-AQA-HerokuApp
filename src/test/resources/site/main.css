@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+body {
+    font-size: 18px;
+    font-family: "Roboto", serif;
+    background-color: lemonchiffon;
+}
+
+table, td, tr {
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+td:last-child {
+    text-align: center;
+}
+
+#head_pic {
+    width: 40px;
+    display: inline-block;
+}
+
+header h1 {
+    display: inline-block;
+    margin: 0;
+}
