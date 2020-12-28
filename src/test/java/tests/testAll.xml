@@ -1,0 +1,53 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll">
+
+    <test name="AddRemove">
+        <classes>
+            <class name="tests.addRemoveTest.AddRemoveTest"/>
+        </classes>
+    </test>
+
+    <test name="Checkboxes">
+        <classes>
+            <class name="tests.checkboxesTest.CheckboxesTest"/>
+        </classes>
+    </test>
+
+    <test name="Dropdown">
+        <classes>
+            <class name="tests.dropdownTest.DropdownTest"/>
+        </classes>
+    </test>
+
+    <test name="Input">
+        <classes>
+            <class name="tests.inputsTest.InputsTest"/>
+        </classes>
+    </test>
+
+    <test name="DataTables">
+        <classes>
+            <class name="tests.dataTablesTest.DataTablesTest"/>
+        </classes>
+    </test>
+
+    <test name="Typos">
+        <classes>
+            <class name="tests.typosTest.TyposTest"/>
+        </classes>
+    </test>
+
+    <test name="HoversTest">
+        <classes>
+            <class name="tests.hoversTest.HoversTest"/>
+        </classes>
+    </test>
+
+    <test name="NotificationMessageTest">
+        <classes>
+            <class name="tests.notificationMessageTest.NotificationMessageTest"/>
+        </classes>
+    </test>
+
+</suite>
