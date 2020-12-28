@@ -1,4 +1,4 @@
-package tests.typosTest;
+package tests.typos_test;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -7,7 +7,6 @@ import pages.TyposPage;
 import tests.AbstractTest;
 
 public class TyposTest extends AbstractTest {
-
     TyposPage typosPage;
 
     @BeforeMethod
@@ -17,9 +16,7 @@ public class TyposTest extends AbstractTest {
 
     @Test
     public void containsTypoTest() {
-
         typosPage.openPage();
-
         Assert.assertFalse(typosPage.isParagraphContainsTypo());
     }
 }

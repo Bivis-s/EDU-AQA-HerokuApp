@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DropdownPage extends AbstractPage {
-
-    protected static final String URL = AbstractPage.URL + "/dropdown";
+    protected static final String DROPDOWN_URL = URL + "/dropdown";
     private final By DROPDOWN = By.xpath("//*[@id='dropdown']");
 
     public DropdownPage(WebDriver driver) {
@@ -18,9 +17,8 @@ public class DropdownPage extends AbstractPage {
     }
 
     @Override
-    public DropdownPage openPage() {
-        driver.get(URL);
-        return this;
+    public void openPage() {
+        driver.get(DROPDOWN_URL);
     }
 
     private Select getDropdown(By element) {
@@ -28,7 +26,6 @@ public class DropdownPage extends AbstractPage {
     }
 
     public List<WebElement> getEnabledOptionsInDropdown() {
-
         List<WebElement> options = new ArrayList<>();
 
         for (WebElement option : getDropdown(DROPDOWN).getOptions()) {
@@ -36,7 +33,6 @@ public class DropdownPage extends AbstractPage {
                 options.add(option);
             }
         }
-
         return options;
     }
 
@@ -45,29 +41,19 @@ public class DropdownPage extends AbstractPage {
      * @return list of attributes "value" of each option
      */
     public List<Integer> getDropdownIntegerValues(List<WebElement> options) {
-
         List<Integer> values = new ArrayList<>();
 
         for (WebElement option : options) {
-                values.add(Integer.valueOf(option.getAttribute("value")));
+            values.add(Integer.valueOf(option.getAttribute("value")));
         }
-
         return values;
     }
 
-    public DropdownPage selectOption(int indexOfOption) {
-        getEnabledOptionsInDropdown()
-                .get(indexOfOption)
-                .click();
-
-        return this;
+    public void selectOption(int indexOfOption) {
+        getEnabledOptionsInDropdown().get(indexOfOption).click();
     }
 
     public boolean isOptionSelected(int indexOfOption) {
-        return getEnabledOptionsInDropdown()
-                .get(indexOfOption)
-                .isSelected();
+        return getEnabledOptionsInDropdown().get(indexOfOption).isSelected();
     }
-
-
 }

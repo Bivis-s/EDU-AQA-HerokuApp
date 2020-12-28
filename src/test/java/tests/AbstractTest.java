@@ -7,19 +7,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import java.util.concurrent.TimeUnit;
-
 public abstract class AbstractTest {
-
     public WebDriver driver;
 
     @BeforeMethod
     public void initTest() {
-
         WebDriverManager.chromedriver().driverVersion("87.0.4280.88").setup();
         driver = new ChromeDriver(new ChromeOptions().addArguments("--incognito"));
         driver.manage().window().maximize();
-
     }
 
     @AfterMethod(alwaysRun = true)
@@ -28,5 +23,4 @@ public abstract class AbstractTest {
             driver.quit();
         }
     }
-
 }

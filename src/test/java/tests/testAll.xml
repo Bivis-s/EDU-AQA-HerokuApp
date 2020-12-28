@@ -4,43 +4,43 @@
 
     <test name="AddRemove">
         <classes>
-            <class name="tests.addRemoveTest.AddRemoveTest"/>
+            <class name="tests.add_remove_test.AddRemoveTest"/>
         </classes>
     </test>
 
     <test name="Checkboxes">
         <classes>
-            <class name="tests.checkboxesTest.CheckboxesTest"/>
+            <class name="tests.checkboxes_test.CheckboxesTest"/>
         </classes>
     </test>
 
     <test name="Dropdown">
         <classes>
-            <class name="tests.dropdownTest.DropdownTest"/>
+            <class name="tests.dropdown_test.DropdownTest"/>
         </classes>
     </test>
 
     <test name="Input">
         <classes>
-            <class name="tests.inputsTest.InputsTest"/>
+            <class name="tests.inputs_test.InputsTest"/>
         </classes>
     </test>
 
     <test name="DataTables">
         <classes>
-            <class name="tests.dataTablesTest.DataTablesTest"/>
+            <class name="tests.data_tables_test.DataTablesTest"/>
         </classes>
     </test>
 
     <test name="Typos">
         <classes>
-            <class name="tests.typosTest.TyposTest"/>
+            <class name="tests.typos_test.TyposTest"/>
         </classes>
     </test>
 
     <test name="HoversTest">
         <classes>
-            <class name="tests.hoversTest.HoversTest"/>
+            <class name="tests.hovers_test.HoversTest"/>
         </classes>
     </test>
 
