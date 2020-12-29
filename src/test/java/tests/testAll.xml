@@ -62,4 +62,10 @@
         </classes>
     </test>
 
+    <test name="IFrameTest">
+        <classes>
+            <class name="tests.iframe_test.IFrameTest"/>
+        </classes>
+    </test>
+
 </suite>
