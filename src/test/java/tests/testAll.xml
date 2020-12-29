@@ -50,4 +50,10 @@
         </classes>
     </test>
 
+    <test name="ContextMenuTest">
+        <classes>
+            <class name="tests.context_menu_test.ContextMenuTest"/>
+        </classes>
+    </test>
+
 </suite>
