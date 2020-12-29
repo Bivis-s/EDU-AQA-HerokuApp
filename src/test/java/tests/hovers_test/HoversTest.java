@@ -13,7 +13,7 @@ public class HoversTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        hoversPage = new HoversPage(driver);
+        hoversPage = new HoversPage(getDriver());
     }
 
     @Test

@@ -56,4 +56,10 @@
         </classes>
     </test>
 
+    <test name="DynamicControlsTest">
+        <classes>
+            <class name="tests.dynamic_controls_test.DynamicControlsTest"/>
+        </classes>
+    </test>
+
 </suite>

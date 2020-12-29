@@ -11,7 +11,7 @@ public class CheckboxesTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        checkboxesPage = new CheckboxesPage(driver);
+        checkboxesPage = new CheckboxesPage(getDriver());
     }
 
     @Test

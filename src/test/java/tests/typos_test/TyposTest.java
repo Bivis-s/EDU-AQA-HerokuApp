@@ -11,7 +11,7 @@ public class TyposTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        typosPage = new TyposPage(driver);
+        typosPage = new TyposPage(getDriver());
     }
 
     @Test

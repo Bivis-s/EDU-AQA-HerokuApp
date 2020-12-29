@@ -11,7 +11,7 @@ public class NotificationMessageTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        notificationMessagePage = new NotificationMessagePage(driver);
+        notificationMessagePage = new NotificationMessagePage(getDriver());
     }
 
     @Test

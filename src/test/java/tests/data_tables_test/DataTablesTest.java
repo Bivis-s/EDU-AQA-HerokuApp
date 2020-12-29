@@ -11,7 +11,7 @@ public class DataTablesTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        dataTablesPage = new DataTablesPage(driver);
+        dataTablesPage = new DataTablesPage(getDriver());
     }
 
     @Test

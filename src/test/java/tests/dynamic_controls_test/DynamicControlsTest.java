@@ -11,7 +11,7 @@ public class DynamicControlsTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        dynamicControlsPage = new DynamicControlsPage(driver);
+        dynamicControlsPage = new DynamicControlsPage(getDriver());
     }
 
     @Test

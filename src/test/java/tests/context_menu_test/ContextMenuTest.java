@@ -11,7 +11,7 @@ public class ContextMenuTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        contextMenuPage = new ContextMenuPage(driver);
+        contextMenuPage = new ContextMenuPage(getDriver());
     }
 
     @Test

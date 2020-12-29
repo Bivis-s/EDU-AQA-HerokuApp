@@ -11,7 +11,7 @@ public class AddRemoveTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        addRemovePage = new AddRemovePage(driver);
+        addRemovePage = new AddRemovePage(getDriver());
     }
 
     @Test

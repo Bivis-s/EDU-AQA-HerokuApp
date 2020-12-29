@@ -19,7 +19,7 @@ public class DropdownTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        dropdownPage = new DropdownPage(driver);
+        dropdownPage = new DropdownPage(getDriver());
     }
 
     @Test

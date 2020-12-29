@@ -12,7 +12,7 @@ public class InputsTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        inputsPage = new InputsPage(driver);
+        inputsPage = new InputsPage(getDriver());
     }
 
     @Test
