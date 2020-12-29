@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import tests.dynamic_controls_test.Values;
 
-public class DynamicControlsPage extends AbstractPage{
+public class DynamicControlsPage extends AbstractPage {
     protected static final String DYNAMIC_CONTROL_URL = URL + "dynamic_controls";
+    private static final int TIME_OUT_IN_SECONDS = 6;
     private final By CHECKBOX =
             By.xpath("//*[contains(@id,'checkbox-example')]//input[contains(@type,'checkbox')]");
     private final By BUTTON_SWAP_CHECKBOX_CONDITION =
@@ -28,13 +28,13 @@ public class DynamicControlsPage extends AbstractPage{
     }
 
     public boolean isCheckboxVisible() {
-        WebDriverWait wait = new WebDriverWait(driver, Values.TIME_OUT_IN_SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, TIME_OUT_IN_SECONDS);
         wait.until(ExpectedConditions.not(ExpectedConditions.invisibilityOfElementLocated(CHECKBOX)));
         return driver.findElements(CHECKBOX).size() != 0;
     }
 
     public boolean isCheckboxInvisible() {
-        WebDriverWait wait = new WebDriverWait(driver, Values.TIME_OUT_IN_SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, TIME_OUT_IN_SECONDS);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(CHECKBOX));
         return driver.findElements(CHECKBOX).size() == 0;
     }
@@ -44,19 +44,19 @@ public class DynamicControlsPage extends AbstractPage{
     }
 
     public String getCheckboxConditionMessage() {
-        WebDriverWait wait = new WebDriverWait(driver, Values.TIME_OUT_IN_SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, TIME_OUT_IN_SECONDS);
         wait.until(ExpectedConditions.not(ExpectedConditions.invisibilityOfElementLocated(CONDITION_MESSAGE)));
         return driver.findElement(CONDITION_MESSAGE).getText();
     }
 
     public boolean isInputFieldDisabled() {
-        WebDriverWait wait = new WebDriverWait(driver, Values.TIME_OUT_IN_SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, TIME_OUT_IN_SECONDS);
         wait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(INPUT_FIELD)));
         return true;
     }
 
     public boolean isInputFieldEnabled() {
-        WebDriverWait wait = new WebDriverWait(driver, Values.TIME_OUT_IN_SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, TIME_OUT_IN_SECONDS);
         wait.until(ExpectedConditions.elementToBeClickable(INPUT_FIELD));
         return true;
     }

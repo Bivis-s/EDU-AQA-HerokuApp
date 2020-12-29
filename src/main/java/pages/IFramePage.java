@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class IFramePage extends AbstractPage{
+public class IFramePage extends AbstractPage {
     protected static String IFRAME_URL = URL + "iframe";
     private final By IFRAME = By.xpath("//iframe[contains(@class,'iframe')]");
     private final By IFRAME_EDITOR_TEXT = By.xpath("//*[@id='tinymce']/p");

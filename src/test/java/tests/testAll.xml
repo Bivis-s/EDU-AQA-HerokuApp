@@ -62,9 +62,21 @@
         </classes>
     </test>
 
+    <test name="FileUploaderTest">
+        <classes>
+            <class name="tests.file_uploader_test.FileUploaderTest"/>
+        </classes>
+    </test>
+
     <test name="IFrameTest">
         <classes>
             <class name="tests.iframe_test.IFrameTest"/>
+        </classes>
+    </test>
+
+    <test name="FileDownloaderTest">
+        <classes>
+            <class name="tests.file_downloader_test.FileDownloaderTest"/>
         </classes>
     </test>
 
