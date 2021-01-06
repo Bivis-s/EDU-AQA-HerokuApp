@@ -46,7 +46,7 @@
 
     <test name="NotificationMessageTest">
         <classes>
-            <class name="tests.notificationMessageTest.NotificationMessageTest"/>
+            <class name="tests.notification_message_test.NotificationMessageTest"/>
         </classes>
     </test>
 

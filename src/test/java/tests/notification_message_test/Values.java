@@ -1,4 +1,4 @@
-package tests.notificationMessageTest;
+package tests.notification_message_test;
 
 import java.util.Arrays;
 import java.util.List;
