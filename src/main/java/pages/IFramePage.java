@@ -3,10 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class IFramePage extends AbstractPage {
-    protected static String IFRAME_URL = URL + "iframe";
+    protected static final String IFRAME_URL = URL + "iframe";
+    private static final int TIME_OUT_IN_SECONDS = 5;
     private final By IFRAME = By.xpath("//iframe[contains(@class,'iframe')]");
     private final By IFRAME_EDITOR_TEXT = By.xpath("//*[@id='tinymce']/p");
 
@@ -20,8 +20,7 @@ public class IFramePage extends AbstractPage {
     }
 
     public void switchToIFrame() {
-        (new WebDriverWait(driver, 3))
-                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(IFRAME));
+        getWebDriverWait(TIME_OUT_IN_SECONDS).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(IFRAME));
         driver.switchTo().defaultContent();
         driver.switchTo().frame(driver.findElement(IFRAME));
     }

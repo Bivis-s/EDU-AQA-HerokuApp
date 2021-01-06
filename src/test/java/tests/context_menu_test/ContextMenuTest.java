@@ -17,26 +17,24 @@ public class ContextMenuTest extends AbstractTest {
     @Test
     public void clickBoxTest() {
         contextMenuPage.openPage();
-
         contextMenuPage.clickBox();
+        contextMenuPage.waitForAlertDisplayed();
         Assert.assertTrue(contextMenuPage.isAlertDisplayed());
     }
 
     @Test
     public void validateAlertTextTest() {
         contextMenuPage.openPage();
-
         contextMenuPage.clickBox();
+        contextMenuPage.waitForAlertDisplayed();
         Assert.assertEquals(contextMenuPage.getAlertText(), Values.EXPECTED_ALERT_TEXT);
     }
 
     @Test
     public void dismissAlertTest() {
         contextMenuPage.openPage();
-
         contextMenuPage.clickBox();
-        Assert.assertTrue(contextMenuPage.isAlertDisplayed());
-
+        contextMenuPage.waitForAlertDisplayed();
         contextMenuPage.dismissAlert();
         Assert.assertFalse(contextMenuPage.isAlertDisplayed());
     }

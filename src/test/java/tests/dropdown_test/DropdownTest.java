@@ -25,7 +25,6 @@ public class DropdownTest extends AbstractTest {
     @Test
     public void allEnabledOptionsValuesInDropdownTest() {
         dropdownPage.openPage();
-
         List<Integer> actualValues = dropdownPage
                 .getDropdownIntegerValues(dropdownPage.getEnabledOptionsInDropdown());
         Assert.assertEquals(actualValues, Values.EXPECTED_DROPDOWN_ENABLED_VALUES);

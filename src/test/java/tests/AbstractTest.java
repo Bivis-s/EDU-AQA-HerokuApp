@@ -21,12 +21,9 @@ public abstract class AbstractTest {
     public void initTest() {
         // Setup ChromeDriver using WebDriverManager
         WebDriverManager.chromedriver().driverVersion("87.0.4280.88").setup();
-
         // Create Chrome Prefs (set download dir)
         HashMap<String, Object> chromePrefs = new HashMap<>();
-//        chromePrefs.put("profile.default_content_settings.popups", 0);
         chromePrefs.put("download.default_directory", new File("src/test/resources/test_res/download").getAbsolutePath());
-
         driver = new ChromeDriver(new ChromeOptions().addArguments("--incognito")
                 .setExperimentalOption("prefs", chromePrefs));
         driver.manage().window().maximize();

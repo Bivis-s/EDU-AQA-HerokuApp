@@ -35,10 +35,8 @@ public class DataTablesTest extends AbstractTest {
     @Test
     public void table1THeadContentTest() {
         dataTablesPage.openPage();
-
         int rowsSize = dataTablesPage.getTable1HeadSize();
         Assert.assertEquals(rowsSize, Values.TABLE1_THEAD_SIZE);
-
         for (int i = 0; i < rowsSize; i++) {
             Assert.assertEquals(dataTablesPage.getTable1HeadCell(i + 1), Values.TABLE1_THEADS[i]);
         }
@@ -47,10 +45,8 @@ public class DataTablesTest extends AbstractTest {
     @Test
     public void table1TBodyContentTest() {
         dataTablesPage.openPage();
-
         int rowsSize = dataTablesPage.getTable1TBodyRowsSize();
         int columnsSize = dataTablesPage.getTable1Body1stRowCellsSize();
-
         // assert each sell in table
         for (int i = 0; i < rowsSize; i++) {
             for (int j = 0; j < columnsSize; j++) {

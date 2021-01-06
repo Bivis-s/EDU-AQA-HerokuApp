@@ -7,8 +7,6 @@ import pages.FileDownloaderPage;
 import tests.AbstractTest;
 import tools.TestTools;
 
-import java.io.IOException;
-
 public class FileDownloaderTest extends AbstractTest {
     FileDownloaderPage fileUploaderPage;
 
@@ -18,18 +16,13 @@ public class FileDownloaderTest extends AbstractTest {
     }
 
     @Test
-    public void isFileDownloadLinkVisible() {
+    public void downloadFileTest() throws InterruptedException {
         fileUploaderPage.openPage();
-        Assert.assertTrue(fileUploaderPage.isDownloadLinkVisible(Values.FILE_NAME));
-    }
-
-    @Test
-    public void downloadFileAndCheckContentTest() throws IOException, InterruptedException {
-        fileUploaderPage.openPage();
-
-        fileUploaderPage.clickDownloadLinkByName(Values.FILE_NAME);
-        Assert.assertEquals(TestTools.readTextFile(Values.FILE_PATH, 5000), Values.FILE_CONTENT);
+        String fileName = fileUploaderPage.getAllAvailableFilesForDownload().get(Values.FIRST_INDEX);
+        String filePath = Values.DOWNLOAD_PATH + fileName;
+        fileUploaderPage.clickDownloadLinkByIndex(Values.FIRST_INDEX);
+        Assert.assertTrue(TestTools.waitForFile(filePath, 10000));
         // delete downloaded file
-        Assert.assertTrue(TestTools.deleteFile(Values.FILE_PATH));
+        Assert.assertTrue(TestTools.deleteFile(filePath));
     }
 }

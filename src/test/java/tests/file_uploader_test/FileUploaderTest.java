@@ -17,10 +17,8 @@ public class FileUploaderTest extends AbstractTest {
     @Test
     public void uploadFileViaInputAndCheckFileNameTest() {
         fileUploaderPage.openPage();
-
         fileUploaderPage.uploadFileToInput(Values.file);
         fileUploaderPage.clickSubmitInputButton();
-
         Assert.assertTrue(fileUploaderPage.getUploadedFiles().contains(Values.fileName));
     }
 

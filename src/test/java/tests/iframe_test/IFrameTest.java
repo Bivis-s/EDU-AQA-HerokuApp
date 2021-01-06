@@ -17,7 +17,6 @@ public class IFrameTest extends AbstractTest {
     @Test
     public void checkDefaultIFrameText() {
         iFramePage.openPage();
-
         iFramePage.switchToIFrame();
         Assert.assertEquals(iFramePage.getIFrameEditorText(), Values.EXPECTED_DEFAULT_IFRAME_TEXT);
     }
@@ -25,7 +24,6 @@ public class IFrameTest extends AbstractTest {
     @Test
     public void writeTextToIFrameTest() {
         iFramePage.openPage();
-
         iFramePage.switchToIFrame();
         iFramePage.clearIFrameEditor();
         iFramePage.sendKeysToIFrameEditor(Values.TEXT_TO_WRITE);

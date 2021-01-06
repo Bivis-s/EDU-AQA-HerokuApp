@@ -38,7 +38,6 @@ public class HoversPage extends AbstractPage {
         List<WebElement> profiles = getAllProfiles();
         int countOfProfiles = profiles.size();
         List<String> captions = new ArrayList<>();
-
         for (int i = 0; i < countOfProfiles; i++) {
             actions.moveToElement(profiles.get(i)).build().perform();
             captions.add(driver.findElement(getProfileCaption(i + 1)).getText());
@@ -49,10 +48,8 @@ public class HoversPage extends AbstractPage {
     public String getAllProfileLinkContent(int numberOfProfile) {
         Actions actions = new Actions(driver);
         List<WebElement> profiles = getAllProfiles();
-
         actions.moveToElement(profiles.get(numberOfProfile)).build().perform();
         driver.findElement(getProfileLink(numberOfProfile + 1)).click();
-
         return driver.findElement(By.tagName("h1")).getText();
     }
 }

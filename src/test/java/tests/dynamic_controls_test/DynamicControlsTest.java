@@ -23,38 +23,32 @@ public class DynamicControlsTest extends AbstractTest {
     @Test
     public void removeCheckboxTest() {
         dynamicControlsPage.openPage();
-
-        dynamicControlsPage.clickButtonSwapCheckboxCondition();
+        dynamicControlsPage.clickRemoveCheckboxButton();
         Assert.assertTrue(dynamicControlsPage.isCheckboxInvisible());
     }
 
     @Test
     public void removeCheckboxMessageGoneTest() {
         dynamicControlsPage.openPage();
-
-        dynamicControlsPage.clickButtonSwapCheckboxCondition();
+        dynamicControlsPage.clickRemoveCheckboxButton();
         Assert.assertEquals(dynamicControlsPage.getCheckboxConditionMessage(), Values.CHECKBOX_CONDITION_MESSAGE_GONE);
     }
 
     @Test
     public void removeThenAddCheckboxTest() {
         dynamicControlsPage.openPage();
-
-        dynamicControlsPage.clickButtonSwapCheckboxCondition();
+        dynamicControlsPage.clickRemoveCheckboxButton();
         dynamicControlsPage.isCheckboxInvisible();
-
-        dynamicControlsPage.clickButtonSwapCheckboxCondition();
+        dynamicControlsPage.clickAddCheckboxButton();
         Assert.assertTrue(dynamicControlsPage.isCheckboxVisible());
     }
 
     @Test
     public void removeCheckboxMessageBackTest() {
         dynamicControlsPage.openPage();
-
-        dynamicControlsPage.clickButtonSwapCheckboxCondition();
+        dynamicControlsPage.clickRemoveCheckboxButton();
         dynamicControlsPage.isCheckboxInvisible();
-
-        dynamicControlsPage.clickButtonSwapCheckboxCondition();
+        dynamicControlsPage.clickAddCheckboxButton();
         Assert.assertEquals(dynamicControlsPage.getCheckboxConditionMessage(), Values.CHECKBOX_CONDITION_MESSAGE_BACK);
     }
 
@@ -67,27 +61,23 @@ public class DynamicControlsTest extends AbstractTest {
     @Test
     public void enableInputTest() {
         dynamicControlsPage.openPage();
-
-        dynamicControlsPage.clickButtonSwapInputCondition();
+        dynamicControlsPage.clickEnableInputButton();
         Assert.assertTrue(dynamicControlsPage.isInputFieldEnabled());
     }
 
     @Test
     public void checkEnabledInputMessageTest() {
         dynamicControlsPage.openPage();
-
-        dynamicControlsPage.clickButtonSwapInputCondition();
+        dynamicControlsPage.clickEnableInputButton();
         Assert.assertEquals(dynamicControlsPage.getCheckboxConditionMessage(), Values.INPUT_CONDITION_MESSAGE_ENABLED);
     }
 
     @Test
     public void checkDisabledInputMessageTest() {
         dynamicControlsPage.openPage();
-
-        dynamicControlsPage.clickButtonSwapInputCondition();
+        dynamicControlsPage.clickEnableInputButton();
         dynamicControlsPage.getCheckboxConditionMessage();
-
-        dynamicControlsPage.clickButtonSwapInputCondition();
+        dynamicControlsPage.clickDisableInputButton();
         Assert.assertEquals(dynamicControlsPage.getCheckboxConditionMessage(), Values.INPUT_CONDITION_MESSAGE_DISABLED);
     }
 }

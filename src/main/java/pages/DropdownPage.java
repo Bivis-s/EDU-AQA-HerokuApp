@@ -27,7 +27,6 @@ public class DropdownPage extends AbstractPage {
 
     public List<WebElement> getEnabledOptionsInDropdown() {
         List<WebElement> options = new ArrayList<>();
-
         for (WebElement option : getDropdown(DROPDOWN).getOptions()) {
             if (option.isEnabled()) {
                 options.add(option);
@@ -42,7 +41,6 @@ public class DropdownPage extends AbstractPage {
      */
     public List<Integer> getDropdownIntegerValues(List<WebElement> options) {
         List<Integer> values = new ArrayList<>();
-
         for (WebElement option : options) {
             values.add(Integer.valueOf(option.getAttribute("value")));
         }

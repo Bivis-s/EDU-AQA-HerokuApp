@@ -3,20 +3,21 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DynamicControlsPage extends AbstractPage {
     protected static final String DYNAMIC_CONTROL_URL = URL + "dynamic_controls";
     private static final int TIME_OUT_IN_SECONDS = 6;
     private final By CHECKBOX =
             By.xpath("//*[contains(@id,'checkbox-example')]//input[contains(@type,'checkbox')]");
-    private final By BUTTON_SWAP_CHECKBOX_CONDITION =
-            By.xpath("//*[contains(@id,'checkbox-example')]//button[contains(text(),'Remove')" +
-                    " or contains(text(),'Add')]");
+    private final String BUTTON_CHECKBOX_CONDITION_XPATH =
+            "//*[contains(@id,'checkbox-example')]//button[contains(text(),'%s')]";
+    private final By BUTTON_ADD_CHECKBOX = By.xpath(String.format(BUTTON_CHECKBOX_CONDITION_XPATH, "Add"));
+    private final By BUTTON_REMOVE_CHECKBOX = By.xpath(String.format(BUTTON_CHECKBOX_CONDITION_XPATH, "Remove"));
     private final By CONDITION_MESSAGE = By.xpath("//*[@id='message']");
-
     private final By INPUT_FIELD = By.xpath("//*[@id='input-example']//input");
-    private final By BUTTON_SWAP_INPUT_CONDITION = By.xpath("//*[@id='input-example']//button");
+    private final String BUTTON_INPUT_CONDITION_XPATH = "//*[@id='input-example']//button[contains(text(),'%s')]";
+    private final By BUTTON_INPUT_ENABLE = By.xpath(String.format(BUTTON_INPUT_CONDITION_XPATH, "Enable"));
+    private final By BUTTON_INPUT_DISABLE = By.xpath(String.format(BUTTON_INPUT_CONDITION_XPATH, "Disable"));
 
     public DynamicControlsPage(WebDriver driver) {
         super(driver);
@@ -28,40 +29,43 @@ public class DynamicControlsPage extends AbstractPage {
     }
 
     public boolean isCheckboxVisible() {
-        WebDriverWait wait = new WebDriverWait(driver, TIME_OUT_IN_SECONDS);
-        wait.until(ExpectedConditions.not(ExpectedConditions.invisibilityOfElementLocated(CHECKBOX)));
-        return driver.findElements(CHECKBOX).size() != 0;
+        getWebDriverWait(TIME_OUT_IN_SECONDS).until(ExpectedConditions.not(ExpectedConditions.invisibilityOfElementLocated(CHECKBOX)));
+        return driver.findElement(CHECKBOX).isDisplayed();
     }
 
     public boolean isCheckboxInvisible() {
-        WebDriverWait wait = new WebDriverWait(driver, TIME_OUT_IN_SECONDS);
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(CHECKBOX));
-        return driver.findElements(CHECKBOX).size() == 0;
+        getWebDriverWait(TIME_OUT_IN_SECONDS).until(ExpectedConditions.invisibilityOfElementLocated(CHECKBOX));
+        return driver.findElements(CHECKBOX).isEmpty();
     }
 
-    public void clickButtonSwapCheckboxCondition() {
-        driver.findElement(BUTTON_SWAP_CHECKBOX_CONDITION).click();
+    public void clickAddCheckboxButton() {
+        driver.findElement(BUTTON_ADD_CHECKBOX).click();
+    }
+
+    public void clickRemoveCheckboxButton() {
+        driver.findElement(BUTTON_REMOVE_CHECKBOX).click();
     }
 
     public String getCheckboxConditionMessage() {
-        WebDriverWait wait = new WebDriverWait(driver, TIME_OUT_IN_SECONDS);
-        wait.until(ExpectedConditions.not(ExpectedConditions.invisibilityOfElementLocated(CONDITION_MESSAGE)));
+        getWebDriverWait(TIME_OUT_IN_SECONDS).until(ExpectedConditions.not(ExpectedConditions.invisibilityOfElementLocated(CONDITION_MESSAGE)));
         return driver.findElement(CONDITION_MESSAGE).getText();
     }
 
     public boolean isInputFieldDisabled() {
-        WebDriverWait wait = new WebDriverWait(driver, TIME_OUT_IN_SECONDS);
-        wait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(INPUT_FIELD)));
+        getWebDriverWait(TIME_OUT_IN_SECONDS).until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(INPUT_FIELD)));
         return true;
     }
 
     public boolean isInputFieldEnabled() {
-        WebDriverWait wait = new WebDriverWait(driver, TIME_OUT_IN_SECONDS);
-        wait.until(ExpectedConditions.elementToBeClickable(INPUT_FIELD));
+        getWebDriverWait(TIME_OUT_IN_SECONDS).until(ExpectedConditions.elementToBeClickable(INPUT_FIELD));
         return true;
     }
 
-    public void clickButtonSwapInputCondition() {
-        driver.findElement(BUTTON_SWAP_INPUT_CONDITION).click();
+    public void clickEnableInputButton() {
+        driver.findElement(BUTTON_INPUT_ENABLE).click();
+    }
+
+    public void clickDisableInputButton() {
+        driver.findElement(BUTTON_INPUT_DISABLE).click();
     }
 }

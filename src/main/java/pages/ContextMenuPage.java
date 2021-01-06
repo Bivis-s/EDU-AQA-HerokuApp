@@ -2,9 +2,11 @@ package pages;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ContextMenuPage extends AbstractPage {
     protected static final String CONTEXT_MENU_URL = URL + "context_menu";
+    private static final int TIME_OUT_IN_SECONDS = 3;
     private final By BOX = By.xpath("//*[@id='hot-spot']");
 
     public ContextMenuPage(WebDriver driver) {
@@ -19,6 +21,10 @@ public class ContextMenuPage extends AbstractPage {
     public void clickBox() {
         Actions actions = new Actions(driver);
         actions.contextClick(driver.findElement(BOX)).build().perform();
+    }
+
+    public void waitForAlertDisplayed() {
+        getWebDriverWait(TIME_OUT_IN_SECONDS).until(ExpectedConditions.alertIsPresent());
     }
 
     public boolean isAlertDisplayed() {

@@ -4,10 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FileDownloaderPage extends AbstractPage {
     protected static final String FILE_DOWNLOADER_URL = URL + "download";
     private final String DOWNLOAD_LINK = "//*[contains(@class,'example')]//a";
-    private final String DOWNLOAD_LINK_WITH_SPECIFIC_NAME = DOWNLOAD_LINK + "[text()='%s']";
+    private final String DOWNLOAD_LINK_WITH_SPECIFIC_NAME = DOWNLOAD_LINK + "[%s]";
 
     public FileDownloaderPage(WebDriver driver) {
         super(driver);
@@ -18,16 +21,19 @@ public class FileDownloaderPage extends AbstractPage {
         driver.get(FILE_DOWNLOADER_URL);
     }
 
-    private WebElement getDownloadLinkByName(String name) {
-        return driver.findElement(By.xpath(String.format(DOWNLOAD_LINK_WITH_SPECIFIC_NAME, name)));
+    private WebElement getDownloadLinkByIndex(int index) {
+        return driver.findElement(By.xpath(String.format(DOWNLOAD_LINK_WITH_SPECIFIC_NAME, index + 1)));
     }
 
-    public boolean isDownloadLinkVisible(String fileName) {
-        return driver.findElements(By.xpath(String.format(DOWNLOAD_LINK_WITH_SPECIFIC_NAME, fileName)))
-                .size() != 0;
+    public void clickDownloadLinkByIndex(int index) {
+        getDownloadLinkByIndex(index).click();
     }
 
-    public void clickDownloadLinkByName(String name) throws InterruptedException {
-        getDownloadLinkByName(name).click();
+    public List<String> getAllAvailableFilesForDownload() {
+        List<String> strings = new ArrayList<>();
+        for (WebElement element : driver.findElements(By.xpath(DOWNLOAD_LINK))) {
+            strings.add(element.getText());
+        }
+        return strings;
     }
 }

@@ -23,11 +23,9 @@ public class NotificationMessageTest extends AbstractTest {
     @Test
     public void clickLinkTest() {
         notificationMessagePage.openPage();
-
         // click link
         notificationMessagePage.clickLoadMessageLink();
         Assert.assertTrue(notificationMessagePage.isNotificationDisplayed());
-
         // get Message text
         String messageText = notificationMessagePage.getNotificationText();
         Assert.assertTrue(Values.MESSAGES_TEXTS.contains(messageText), messageText);
@@ -37,10 +35,8 @@ public class NotificationMessageTest extends AbstractTest {
     @Test
     public void closeNotificationTest() {
         notificationMessagePage.openPage();
-
         // click link
         notificationMessagePage.clickLoadMessageLink();
-
         // click close button
         notificationMessagePage.closeNotification();
         Assert.assertFalse(notificationMessagePage.isNotificationDisplayed());
