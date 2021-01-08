@@ -14,7 +14,6 @@ public class PagesTools {
      */
     public static void clickElementByCount(WebDriver driver, By element, int count) {
         WebElement button = driver.findElement(element);
-
         for (int i = 0; i < count; i++) {
             button.click();
         }

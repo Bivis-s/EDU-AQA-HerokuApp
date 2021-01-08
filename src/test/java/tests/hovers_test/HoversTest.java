@@ -13,7 +13,7 @@ public class HoversTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        hoversPage = new HoversPage(driver);
+        hoversPage = new HoversPage(getDriver());
     }
 
     @Test
@@ -27,10 +27,8 @@ public class HoversTest extends AbstractTest {
     public void profilesCaptionsTest() {
         // open page
         hoversPage.openPage();
-
         // get captions of all profiles
         List<String> captions = hoversPage.getAllCaptions();
-
         // assert each caption
         for (int i = 0; i < captions.size(); i++) {
             Assert.assertEquals(captions.get(i), Values.CAPTIONS.get(i));
@@ -41,11 +39,9 @@ public class HoversTest extends AbstractTest {
     public void checkUserProfilesTest() {
         // open page
         hoversPage.openPage();
-
         // get count of profiles on page
         int countOfProfiles = hoversPage.getAllProfiles().size();
         Assert.assertEquals(countOfProfiles, Values.COUNT_OF_PROFILES);
-
         // assert each profile link content in new page
         for (int i = 0; i < countOfProfiles; i++) {
             hoversPage.openPage();

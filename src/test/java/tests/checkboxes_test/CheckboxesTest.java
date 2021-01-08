@@ -11,7 +11,7 @@ public class CheckboxesTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        checkboxesPage = new CheckboxesPage(driver);
+        checkboxesPage = new CheckboxesPage(getDriver());
     }
 
     @Test
@@ -29,7 +29,6 @@ public class CheckboxesTest extends AbstractTest {
     @Test
     public void check1stCheckboxTest() {
         checkboxesPage.openPage();
-
         checkboxesPage.clickCheckbox(1);
         Assert.assertTrue(checkboxesPage.isCheckboxChecked(1));
     }
@@ -37,7 +36,6 @@ public class CheckboxesTest extends AbstractTest {
     @Test
     public void uncheck2ndCheckboxTest() {
         checkboxesPage.openPage();
-
         checkboxesPage.clickCheckbox(2);
         Assert.assertFalse(checkboxesPage.isCheckboxChecked(2));
     }

@@ -18,7 +18,7 @@ public class AddRemovePage extends AbstractPage {
         driver.get(ADD_REMOVE_URL);
     }
 
-    public void addElement(int count) {
+    public void addElementByCount(int count) {
         PagesTools.clickElementByCount(driver, BUTTON_ADD_ELEMENT, count);
     }
 

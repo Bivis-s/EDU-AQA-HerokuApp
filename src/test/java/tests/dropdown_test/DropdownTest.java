@@ -19,13 +19,12 @@ public class DropdownTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        dropdownPage = new DropdownPage(driver);
+        dropdownPage = new DropdownPage(getDriver());
     }
 
     @Test
     public void allEnabledOptionsValuesInDropdownTest() {
         dropdownPage.openPage();
-
         List<Integer> actualValues = dropdownPage
                 .getDropdownIntegerValues(dropdownPage.getEnabledOptionsInDropdown());
         Assert.assertEquals(actualValues, Values.EXPECTED_DROPDOWN_ENABLED_VALUES);

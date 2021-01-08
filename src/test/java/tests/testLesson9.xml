@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestLesson9">
+
+    <test name="ContextMenuTest">
+        <classes>
+            <class name="tests.context_menu_test.ContextMenuTest"/>
+        </classes>
+    </test>
+
+    <test name="DynamicControlsTest">
+        <classes>
+            <class name="tests.dynamic_controls_test.DynamicControlsTest"/>
+        </classes>
+    </test>
+
+    <test name="FileUploaderTest">
+        <classes>
+            <class name="tests.file_uploader_test.FileUploaderTest"/>
+        </classes>
+    </test>
+
+    <test name="IFrameTest">
+        <classes>
+            <class name="tests.iframe_test.IFrameTest"/>
+        </classes>
+    </test>
+
+    <test name="FileDownloaderTest">
+        <classes>
+            <class name="tests.file_downloader_test.FileDownloaderTest"/>
+        </classes>
+    </test>
+
+</suite>

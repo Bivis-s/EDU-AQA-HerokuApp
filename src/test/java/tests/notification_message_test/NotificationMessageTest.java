@@ -1,4 +1,4 @@
-package tests.notificationMessageTest;
+package tests.notification_message_test;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -11,7 +11,7 @@ public class NotificationMessageTest extends AbstractTest {
 
     @BeforeMethod
     public void initPage() {
-        notificationMessagePage = new NotificationMessagePage(driver);
+        notificationMessagePage = new NotificationMessagePage(getDriver());
     }
 
     @Test
@@ -23,11 +23,9 @@ public class NotificationMessageTest extends AbstractTest {
     @Test
     public void clickLinkTest() {
         notificationMessagePage.openPage();
-
         // click link
         notificationMessagePage.clickLoadMessageLink();
         Assert.assertTrue(notificationMessagePage.isNotificationDisplayed());
-
         // get Message text
         String messageText = notificationMessagePage.getNotificationText();
         Assert.assertTrue(Values.MESSAGES_TEXTS.contains(messageText), messageText);
@@ -37,10 +35,8 @@ public class NotificationMessageTest extends AbstractTest {
     @Test
     public void closeNotificationTest() {
         notificationMessagePage.openPage();
-
         // click link
         notificationMessagePage.clickLoadMessageLink();
-
         // click close button
         notificationMessagePage.closeNotification();
         Assert.assertFalse(notificationMessagePage.isNotificationDisplayed());

@@ -7,13 +7,25 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.File;
+import java.util.HashMap;
+
 public abstract class AbstractTest {
-    public WebDriver driver;
+    private WebDriver driver;
+
+    public WebDriver getDriver() {
+        return driver;
+    }
 
     @BeforeMethod
     public void initTest() {
+        // Setup ChromeDriver using WebDriverManager
         WebDriverManager.chromedriver().driverVersion("87.0.4280.88").setup();
-        driver = new ChromeDriver(new ChromeOptions().addArguments("--incognito"));
+        // Create Chrome Prefs (set download dir)
+        HashMap<String, Object> chromePrefs = new HashMap<>();
+        chromePrefs.put("download.default_directory", new File("src/test/resources/test_res/download").getAbsolutePath());
+        driver = new ChromeDriver(new ChromeOptions().addArguments("--incognito")
+                .setExperimentalOption("prefs", chromePrefs));
         driver.manage().window().maximize();
     }
 
