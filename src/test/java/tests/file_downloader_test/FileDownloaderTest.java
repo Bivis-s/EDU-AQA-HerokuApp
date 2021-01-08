@@ -18,7 +18,7 @@ public class FileDownloaderTest extends AbstractTest {
     @Test
     public void downloadFileTest() throws InterruptedException {
         fileUploaderPage.openPage();
-        String fileName = fileUploaderPage.getAllAvailableFilesForDownload().get(Values.FIRST_INDEX);
+        String fileName = fileUploaderPage.getAllAvailableFileNamesForDownload().get(Values.FIRST_INDEX);
         String filePath = Values.DOWNLOAD_PATH + fileName;
         fileUploaderPage.clickDownloadLinkByIndex(Values.FIRST_INDEX);
         Assert.assertTrue(TestTools.waitForFile(filePath, 10000));

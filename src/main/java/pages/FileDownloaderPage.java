@@ -29,11 +29,11 @@ public class FileDownloaderPage extends AbstractPage {
         getDownloadLinkByIndex(index).click();
     }
 
-    public List<String> getAllAvailableFilesForDownload() {
-        List<String> strings = new ArrayList<>();
+    public List<String> getAllAvailableFileNamesForDownload() {
+        List<String> allAvailableFileNames = new ArrayList<>();
         for (WebElement element : driver.findElements(By.xpath(DOWNLOAD_LINK))) {
-            strings.add(element.getText());
+            allAvailableFileNames.add(element.getText());
         }
-        return strings;
+        return allAvailableFileNames;
     }
 }
